@@ -8,6 +8,7 @@
 html{
     font-size: 10px;
     font-family: 'Montserrat',sans-serif;
+    scroll-behavior: smooth;
 }
 a{
     text-decoration: none;
@@ -19,7 +20,19 @@ a{
     align-items: center;
     justify-content: center;
 }
-
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+p{
+    color: black;
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .05rem;
+}
 /* Hero section */
 #hero{
     background-image: url(./img/hero-bg.jpg);
@@ -42,7 +55,7 @@ a{
     height: 100%;
     width: 100%;
     background-color: black;
-    opacity: .7;
+    opacity: 0.7;
     z-index: -1;
 }
 #hero h1{
@@ -61,7 +74,7 @@ a{
     animation-delay: 2s;
 }
 #hero h1 :nth-child(3){
-    animation: text_reveal_name .5s ease forwards;
+    animation: text_reveal_name 0.5s ease forwards;
     animation-delay: 3s;
 }
 #hero h1 span{
@@ -71,7 +84,7 @@ a{
     height: 100%;
     width: 0;
     background-color: crimson;
-    animation: text_reveal_box 1s;
+    animation: text_reveal_box 1s ease;
     animation-delay: .5s;
 }
 #hero h1:nth-child(1) span{
@@ -91,9 +104,9 @@ a{
     border: 2px solid crimson;
     font-size: 2rem;
     text-transform: uppercase;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     margin-top: 30px;
-    transition: .3s ease;
+    transition: 0.3s ease;
     transition-property: background-color,color;  
 }
 #hero .cta:hover{
@@ -101,6 +114,78 @@ a{
     background-color: crimson;
 }
 /* End Hero section */
+
+/* Services Section */
+#services{}
+#services .services{
+    flex-direction: column;   
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0; 
+}
+#services .section-title{
+    font-size: 4rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+#services .section-title span{
+    color: crimson;
+}
+
+#services .service-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px
+}
+#services .service-item{
+    flex-basis: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px;
+    background-image: url(./img/img-1.jpg);
+    background-size: cover;
+    margin: 10px 5%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+#services .service-item::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(62, 56, 82);
+    opacity: .8;
+    z-index: -1;
+}
+#services .service-bottom .icon{
+    height: 80px;
+    width: 80px;
+    margin-bottom: 20px;
+}
+#services .service-item h2{
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+#services .service-item p{
+    color: white;
+    text-align: left;
+}
+/*End Services Section */
 
 
 /* keyframes */
@@ -122,7 +207,7 @@ a{
 @keyframes text_reveal_name{
     100%{
         color: crimson;
-        font-weight: 500px;
+        font-weight: 500;
     }
 }
 /* End keyframes */
